@@ -1,4 +1,4 @@
-package warmup;
+package codingbat;
 
 import org.junit.jupiter.api.Test;
 
