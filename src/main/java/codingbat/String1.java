@@ -35,10 +35,11 @@ public class String1 {
     */
     public static String extraEnd(String str) {
         int length = str.length();
-        if (length > 2)
+        if (length > 2) {
             return str = str.substring(length - 2, length) + str.substring(length - 2, length) + str.substring(length - 2, length);
-        else
-            return str = str+str+str;
+        }else{
+            return str+str+str;
+        }
     }
 
     /*Given a string, return the string made of its first two chars, so the String "Hello" yields "He".
@@ -46,10 +47,11 @@ public class String1 {
     * yields the empty string "". Note that str.length() returns the length of a string.
      */
     public static String firstTwo(String str) {
-        if(str.length()>2)
-            return str = str.substring(0,2);
-        else
+        if(str.length()>2) {
+            return str = str.substring(0, 2);
+        }else {
             return str;
+        }
     }
 
     /* Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
@@ -70,10 +72,11 @@ public class String1 {
     * The strings will not be the same length, but they may be empty (length 0).
     */
     public static String comboString(String a, String b) {
-        if(a.length() > b.length())
+        if(a.length() > b.length()) {
             return a = b + a + b;
-        else
+        } else {
             return a = a + b + a;
+        }
     }
     /* Given 2 strings, return their concatenation, except omit the first char of each.
      * The strings will be at least length 1.
@@ -85,10 +88,11 @@ public class String1 {
      * The string length will be at least 2.
      */
     public static String left2(String str) {
-        if(str.length() >= 3)
-            return str = str.substring(2,str.length()) + str.substring(0,2);
-        else
+        if(str.length() >= 3) {
+            return str = str.substring(2, str.length()) + str.substring(0, 2);
+        }else {
             return str;
+        }
     }
 
     /*Given a string, return a "rotated right 2" version where the last 2 chars are moved to the start.
@@ -96,10 +100,11 @@ public class String1 {
      */
     public static String right2(String str) {
         int length = str.length();
-        if(length >= 3)
-            return str = str.substring(length - 2,length) + str.substring(0,length - 2);
-        else
-                return str;
+        if(length >= 3) {
+            return str = str.substring(length - 2, length) + str.substring(0, length - 2);
+        }else {
+            return str;
+        }
     }
 
     /*Given a string, return a string length 1 from its front,
@@ -107,10 +112,11 @@ public class String1 {
      */
     public String theEnd(String str, boolean front) {
         int length = str.length();
-        if (front)
-            return str.substring(0,1);
-        else
+        if (front) {
+            return str.substring(0, 1);
+        }else {
             return str.substring(length - 1, length);
+        }
     }
 
     /*Given a string, return a version without both the first and last char of the string.
@@ -118,12 +124,14 @@ public class String1 {
      */
     public String withouEnd2(String str) {
         int length = str.length();
-        if (length == 1)
-            return str.substring(0,length - 1);
-        if (length >= 2)
-            return str.substring(1,length - 1);
-        else
+        if (length == 1) {
+            return str.substring(0, length - 1);
+        }
+        if (length >= 2) {
+            return str.substring(1, length - 1);
+        } else {
             return str;
+        }
     }
 
     /* Given a string of even length, return a string made of the middle two chars, so the string "string" yields "ri".
@@ -138,10 +146,11 @@ public class String1 {
      */
     public boolean endsLy(String str) {
         int length = str.length();
-        if (length > 1)
+        if (length > 1) {
             return "ly".equals(str.substring(length - 2));
-        else
+        }else {
             return false;
+        }
     }
 
    /* Given a string and an int n, return a string made of the first and last n chars from the string.
@@ -165,12 +174,14 @@ public class String1 {
      */
     public boolean hasBad(String str) {
         int length = str.length();
-        if (length == 3)
-            return "bad".equals(str.substring(0,3));
-        if (length > 3)
-            return "bad".equals(str.substring(0,3)) || "bad".equals(str.substring(1,4));
-        else
+        if (length == 3) {
+            return "bad".equals(str.substring(0, 3));
+        }
+        if (length > 3) {
+            return "bad".equals(str.substring(0, 3)) || "bad".equals(str.substring(1, 4));
+        } else {
             return false;
+        }
     }
 
 }
