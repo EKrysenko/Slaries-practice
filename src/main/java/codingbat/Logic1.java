@@ -8,9 +8,9 @@ public class Logic1 {
    */
    public boolean cigarParty(int cigars, boolean isWeekend) {
        boolean result = false;
-       if (isWeekend == true && cigars >= 40)
+       if (isWeekend && cigars >= 40)
            result = true;
-       if (isWeekend == false && cigars >= 40 && cigars <= 60)
+       if (!isWeekend && cigars >= 40 && cigars <= 60)
            result = true;
        return result;
    }
@@ -23,15 +23,12 @@ public class Logic1 {
    * then the result is 0 (no). Otherwise the result is 1 (maybe).
    */
    public int dateFashion(int you, int date) {
-       if((you >= 8 || date >= 8) && !(you <= 2 || date <= 2)) {
-           return 2;
-       }
-       else if (you <= 2 || date <= 2) {
+       if(you <= 2 || date <= 2)
            return 0;
-       }
-       else {
+       if(you >= 9 || date >= 8)
+           return 2;
+       else
            return 1;
-       }
    }
 
    /* squirrelPlay
@@ -41,9 +38,9 @@ public class Logic1 {
     */
    public boolean squirrelPlay(int temp, boolean isSummer) {
        boolean result = false;
-       if (isSummer == true && temp >= 60 && temp <= 100)
+       if (isSummer && temp >= 60 && temp <= 100)
            result = true;
-       if (isSummer == false && temp >= 60 && temp <= 90)
+       if (!isSummer && temp >= 60 && temp <= 90)
            result = true;
        return result;
    }
@@ -56,17 +53,17 @@ public class Logic1 {
     */
    public int caughtSpeeding(int speed, boolean isBirthday) {
        int result = 0;
-       if (isBirthday == false && speed <= 60)
+       if (!isBirthday && speed <= 60)
            result = 0;
-       if (isBirthday == false && speed > 60 && speed <= 80)
+       if (!isBirthday && speed > 60 && speed <= 80)
            result = 1;
-       if (isBirthday == false && speed > 80)
+       if (!isBirthday && speed > 80)
            result = 2;
-       if (isBirthday == true && speed <= 65)
+       if (isBirthday && speed <= 65)
            result = 0;
-       if (isBirthday == true && speed > 65 && speed <= 85)
+       if (isBirthday && speed > 65 && speed <= 85)
            result = 1;
-       if (isBirthday == true && speed > 85)
+       if (isBirthday && speed > 85)
            result = 2;
        return result;
    }
@@ -93,14 +90,14 @@ public class Logic1 {
  */
 public String alarmClock(int day, boolean vacation) {
     String result = "10:00";
-    if (vacation == true){
+    if (vacation){
         result = "10:00";
     } else {
         if (day >= 1 && day <= 5){
             result = "7:00";
         }
     }
-    if (vacation == true && (day == 0 || day == 6 )){
+    if (vacation && (day == 0 || day == 6 )){
         result = "off";
     }
     return result;
@@ -127,9 +124,9 @@ public boolean love6(int a, int b) {
  */
 public boolean in1To10(int n, boolean outsideMode) {
     boolean result = false;
-    if (outsideMode == false && n >= 1 && n <= 10)
+    if (!outsideMode && n >= 1 && n <= 10)
         result = true;
-    if (outsideMode == true && (n <= 1 || n >= 10))
+    if (outsideMode && (n <= 1 || n >= 10))
         result = true;
     return result;
 }
@@ -191,9 +188,9 @@ public int teenSum(int a, int b) {
  */
 public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
     boolean result = false;
-    if ( isAsleep == false)
+    if (!isAsleep)
         result = true;
-    if ( isMorning == true && !isMom)
+    if (isMorning && !isMom)
         result = false;
     return result;
 }
